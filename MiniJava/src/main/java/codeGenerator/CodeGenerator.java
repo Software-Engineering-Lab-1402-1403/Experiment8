@@ -1,6 +1,7 @@
 package codeGenerator;
 
 import Log.Log;
+import com.sun.tools.javac.util.Assert;
 import com.sun.tools.javac.util.Pair;
 import errorHandler.ErrorHandler;
 import scanner.token.Token;
@@ -366,6 +367,9 @@ public class CodeGenerator {
     }
 
     private Pair<Pair<Address, Address>, Address> extractAddresses() {
+        Assert.checkNonNull(ss);
+        Assert.checkNonNull(memory);
+
         Address s2 = ss.pop();
         Address s1 = ss.pop();
         memory.addTempSize();

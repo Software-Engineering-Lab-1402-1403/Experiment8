@@ -63,3 +63,13 @@ We have a same pattern in 4 different method like the pictures below. We can Ext
 After we Extract our method, The result will be like this.
 
 ![img.png](screenshots/Ex5.png)
+
+## Introduce Assertion
+
+In the previous method addition we did, There is a condition that ss and memory shouldn't be NULL. 
+
+![img.png](screenshots/Assertion1.png)
+
+So using this type of Refactoring we create 2 lines of Assert conditions to make sure those variables are not NULL.
+
+![img.png](screenshots/Assertion2.png)
