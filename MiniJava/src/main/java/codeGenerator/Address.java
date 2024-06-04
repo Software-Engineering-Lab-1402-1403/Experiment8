@@ -5,9 +5,17 @@ package codeGenerator;
  */
 
 public class Address {
-    public int num;
-    public TypeAddress Type;
+    private int num;
+    private TypeAddress Type;
     public varType varType;
+
+    public int getNum() {
+        return num;
+    }
+
+    public TypeAddress getType() {
+        return Type;
+    }
 
     public Address(int num, varType varType, TypeAddress Type) {
         this.num = num;

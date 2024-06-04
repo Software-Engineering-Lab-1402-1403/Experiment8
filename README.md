@@ -40,3 +40,13 @@ In Class Memory.java there are two methods that violate this pattern.
 We Should Seperate modification of variables fromo getters in these two methods. In the picture below we fixed this issue.
 
 ![img.png](screenshots/Sep2.png)
+
+## Self Encapsulated Field
+
+In Class Address there are 3 public variables which been used from outside of the class directly.
+
+![img.png](screenshots/Self1.png)
+
+We should make them private and Outsiders just call getters and setters. Because of the document for the experiment asks us to solve 1 of these bad smells, we don't make varType private. We just fix Type and num.
+
+![img.png](screenshots/Self2.png)
