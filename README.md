@@ -18,4 +18,14 @@ This Facade contains only getDateAddress methods.
 
 ![img.png](screenshots/Facade2.png)
 
+## Strategy
 
+### Use this pattern in TypeAddress
+
+Instead of using if/else in Address.java toString method, we consider TypeAddress as an Strategy to be set and return good toString output itself.
+
+We should consider changing all enum uses in CodeGenerator and replace them with correct object.
+
+![img.png](screenshots/Imidiate.png)
+![img.png](screenshots/Indirect.png)
+![img.png](screenshots/Direct.png)
