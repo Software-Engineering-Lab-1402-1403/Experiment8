@@ -8,6 +8,7 @@ public class MemorySymbolTableFacade {
     }
 
     public int getDateAddress() {
+        mem.addDataSize();
         return mem.getDateAddress();
     }
 }

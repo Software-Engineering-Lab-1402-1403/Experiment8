@@ -29,3 +29,14 @@ We should consider changing all enum uses in CodeGenerator and replace them with
 ![img.png](screenshots/Imidiate.png)
 ![img.png](screenshots/Indirect.png)
 ![img.png](screenshots/Direct.png)
+
+
+## Seperate Query From Modifier
+
+In Class Memory.java there are two methods that violate this pattern.
+
+![img.png](screenshots/Sep1.png)
+
+We Should Seperate modification of variables fromo getters in these two methods. In the picture below we fixed this issue.
+
+![img.png](screenshots/Sep2.png)
