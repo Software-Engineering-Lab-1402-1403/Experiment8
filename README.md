@@ -73,3 +73,28 @@ In the previous method addition we did, There is a condition that ss and memory 
 So using this type of Refactoring we create 2 lines of Assert conditions to make sure those variables are not NULL.
 
 ![img.png](screenshots/Assertion2.png)
+
+## Add Formatter Plugin to Maven
+
+```xml
+<plugin>
+                <groupId>net.revelc.code.formatter</groupId>
+                <artifactId>formatter-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>format</goal>
+                        </goals>
+                        <configuration>
+                            <configFile>eclipse-java-google-style.xml</configFile>
+                            <encoding>UTF-8</encoding>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>net.revelc.code.formatter</groupId>
+                <artifactId>formatter-maven-plugin</artifactId>
+                <version>2.23.0</version>
+            </plugin>
+```    
