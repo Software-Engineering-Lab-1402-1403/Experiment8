@@ -50,3 +50,16 @@ In Class Address there are 3 public variables which been used from outside of th
 We should make them private and Outsiders just call getters and setters. Because of the document for the experiment asks us to solve 1 of these bad smells, we don't make varType private. We just fix Type and num.
 
 ![img.png](screenshots/Self2.png)
+
+## Extract Methods
+
+We have a same pattern in 4 different method like the pictures below. We can Extract a method named extractAddresses() from these methods to remove a bad smell.
+
+![img.png](screenshots/Ex1.png)
+![img.png](screenshots/Ex2.png)
+![img.png](screenshots/Ex3.png)
+![img.png](screenshots/Ex4.png)
+
+After we Extract our method, The result will be like this.
+
+![img.png](screenshots/Ex5.png)

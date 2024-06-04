@@ -1,6 +1,7 @@
 package codeGenerator;
 
 import Log.Log;
+import com.sun.tools.javac.util.Pair;
 import errorHandler.ErrorHandler;
 import scanner.token.Token;
 import semantic.symbol.Symbol;
@@ -364,11 +365,18 @@ public class CodeGenerator {
         memory.add3AddressCode(Operation.PRINT, ss.pop(), null, null);
     }
 
-    public void equal() {
-        memory.addTempSize();
-        Address temp = new Address(memory.getTemp(), varType.Bool);
+    private Pair<Pair<Address, Address>, Address> extractAddresses() {
         Address s2 = ss.pop();
         Address s1 = ss.pop();
+        memory.addTempSize();
+        Address temp = new Address(memory.getTemp(), varType.Bool);
+        return new Pair<>(new Pair<>(s1, s2), temp);
+    }
+    public void equal() {
+        Pair<Pair<Address, Address>, Address> s = extractAddresses();
+        Address s1 = s.fst.fst;
+        Address s2 = s.fst.snd;
+        Address temp = s.snd;
         if (s1.varType != s2.varType) {
             ErrorHandler.printError("The type of operands in equal operator is different");
         }
@@ -377,10 +385,10 @@ public class CodeGenerator {
     }
 
     public void less_than() {
-        memory.addTempSize();
-        Address temp = new Address(memory.getTemp(), varType.Bool);
-        Address s2 = ss.pop();
-        Address s1 = ss.pop();
+        Pair<Pair<Address, Address>, Address> s = extractAddresses();
+        Address s1 = s.fst.fst;
+        Address s2 = s.fst.snd;
+        Address temp = s.snd;
         if (s1.varType != varType.Int || s2.varType != varType.Int) {
             ErrorHandler.printError("The type of operands in less than operator is different");
         }
@@ -389,10 +397,10 @@ public class CodeGenerator {
     }
 
     public void and() {
-        memory.addTempSize();
-        Address temp = new Address(memory.getTemp(), varType.Bool);
-        Address s2 = ss.pop();
-        Address s1 = ss.pop();
+        Pair<Pair<Address, Address>, Address> s = extractAddresses();
+        Address s1 = s.fst.fst;
+        Address s2 = s.fst.snd;
+        Address temp = s.snd;
         if (s1.varType != varType.Bool || s2.varType != varType.Bool) {
             ErrorHandler.printError("In and operator the operands must be boolean");
         }
@@ -401,10 +409,10 @@ public class CodeGenerator {
     }
 
     public void not() {
-        memory.addTempSize();
-        Address temp = new Address(memory.getTemp(), varType.Bool);
-        Address s2 = ss.pop();
-        Address s1 = ss.pop();
+        Pair<Pair<Address, Address>, Address> s = extractAddresses();
+        Address s1 = s.fst.fst;
+        Address s2 = s.fst.snd;
+        Address temp = s.snd;
         if (s1.varType != varType.Bool) {
             ErrorHandler.printError("In not operator the operand must be boolean");
         }
