@@ -97,4 +97,68 @@ So using this type of Refactoring we create 2 lines of Assert conditions to make
                 <artifactId>formatter-maven-plugin</artifactId>
                 <version>2.23.0</version>
             </plugin>
-```    
+```
+
+## Questions
+
+### 1. Concept Explanations
+
+Clean Code: Code that is easy to read, understand, maintain, and performs correctly.
+
+Technical Debt: Shortcuts in coding that reduce development time in the short term but lead to greater problems and costs in the long term.
+
+Code Smell: Indicators of potential issues in the code that may signify poor design, reduced maintainability, or possible errors.
+
+### 2. Categories of Code Smells
+
+According to refactoring.guru, code smells are divided into five main categories:
+
+1. Object-Oriented Abusers: Smells related to improper use of object-oriented design principles. Examples include misuse of inheritance and poor encapsulation.
+
+2. Encapsulation Smells: Smells indicating a disregard for encapsulation principles. Examples include public data and inappropriate use of getters and setters.
+
+3. Lifecycle Smells: Smells related to improper resource management and object lifecycle handling. Examples include not releasing resources and dependency on external resources.
+
+4. Bloaters: Smells indicating inappropriate data usage, often characterized by excessive size and unnecessary complexity in the code. Examples include long methods and large classes.
+
+5. Change Preventers: Smells that make code changes and maintenance difficult. Examples include high coupling and scattered changes.
+
+### 3. Lazy Class Smell
+
+Category: Lazy Class falls under the "Object-Oriented Abusers" category.
+
+Refactoring Suggestions: To address the Lazy Class smell, use refactoring techniques such as "Inline Class" and "Collapse Hierarchy." These help eliminate or merge classes that do not have enough functionality.
+
+When to Ignore: Ignore the Lazy Class smell when the class is likely to gain more functionality in the future and will develop its responsibilities.
+
+### 4. Code Smells in Model-to-C Converter Project
+
+In a project involving converting a model to C, you might encounter the following code smells:
+
+Long Method: Methods that are excessively long, making them hard to read and maintain.
+
+Large Class: Classes that are overly large and take on too many responsibilities.
+
+Feature Envy: Methods that heavily depend on data from other classes.
+
+Data Clumps: Groups of data items that appear together frequently.
+
+Primitive Obsession: Overuse of primitive data types instead of creating small classes for specific tasks.
+
+Switch Statements: Excessive use of switch statements instead of using polymorphism.
+
+Speculative Generality: Code that is more general than necessary and might never be used.
+
+Temporary Field: Fields that are only used in certain situations.
+
+Message Chains: Long chains of method calls that depend on each other.
+
+Divergent Change: A class that often undergoes many different kinds of changes for different reasons.
+
+### 5. Formatter Plugin
+
+Function: The formatter plugin automatically formats the code according to predefined rules, including setting spaces, indentations, code arrangement, and other visual aspects.
+
+Why It's Helpful: Formatter plugins help maintain consistency and readability in code, reducing errors and increasing the productivity of development teams.
+
+Relationship with Code Refactoring: Properly formatted code sets a good foundation for refactoring, which aims to improve the structure and readability of the code. Having well-formatted code makes the refactoring process easier and more efficient.    
